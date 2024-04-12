@@ -2,7 +2,7 @@
 import Container from "./Container.astro";
 import SectionHeading from "./SectionHeading.astro";
 import CTA from "./CTA.astro";
-import charactersData from "./Data/characters.json";
+import casesData from "./Data/cases.json";
 ---
 
 <section id="cases">
@@ -20,13 +20,16 @@ import charactersData from "./Data/characters.json";
       >
         <!-- card start-->
         {
-          charactersData.map(({ name, description, image }) => (
+          casesData.map(({ name, description, image }) => (
             <div class="flex flex-col">
               <div class="p-6 flex flex-col border coal  md:aspect-[3/4]">
-                <div class="w-full h-auto justify-start items-center flex">
-                  <img class="" src={image} />
+                <div class="w-full md:w-2/3 h-auto justify-start items-center flex">
+                  <img class="w-full" src={image} />
                 </div>
-                <p class="text-wrap w-full mt-6">{description}</p>
+                <div class="mt-6 text-wrap">
+                  <p class="text-lg font-normal mb-1">{name}</p>
+                  <p>{description}</p>
+                </div>
                 <button
                   data-modal-target="default-modal"
                   data-modal-toggle="default-modal"

@@ -1,20 +1,20 @@
 [
     {
         "id": 1,
-        "name": "Миша",
+        "name": "Миша и корманный шнырь",
         "description": "Скорость генерации зависит от того, какие параметры вы задаете, в среднем 1 минута",
-        "image": "/characters/mike.webp"
+        "image": "/cases/mike-on-boat.webp"
     },
     {
         "id": 2,
-        "name": "Катя",
+        "name": "Японский Бог",
         "description": "Скорость генерации зависит от того, какие параметры вы задаете, в среднем 1 минута",
-        "image": "/characters/kate.webp"
+        "image": "/cases/japan.webp"
     },
     {
         "id": 3,
-        "name": "Создайте сами",
+        "name": "Катя и остров петрович",
         "description": "Скорость генерации зависит от того, какие параметры вы задаете, в среднем 1 минута",
-        "image": "/characters/mike.webp"
+        "image": "/cases/turtle.webp"
     }
 ]
