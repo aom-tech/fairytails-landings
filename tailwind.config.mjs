@@ -25,11 +25,15 @@ export default {
 		  800: "#292A32",
 		  900: "#191A23",
 		},
+		ochre: '#E4A956',
+		beige: '#FFFAF1',
+		coal: '#666460'
 	  },
 	  extend: {
 		fontFamily: {
-			SpaceGrotesk: ["Space Grotesk", "sans-serif"],
-		},
+			kudry: ["Kudry", "sans-serif"],
+			montserrat: ["Montserrat", "sans-serif"]
+		}
 	  },
 	},
   };

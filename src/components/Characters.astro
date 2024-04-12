@@ -1,0 +1,44 @@
+---
+import Container from "./Container.astro";
+import CTA from "./CTA.astro";
+import SectionHeading from "./SectionHeading.astro";
+import charactersData from "./Data/characters.json";
+---
+
+<section id="characters">
+  <Container>
+    <div class="relative flex flex-col items-center">
+      <SectionHeading> Персонажи </SectionHeading>
+      <!-- <div class="flex items-center py-5 md:w-6/12 md:py-10">
+        <p class="text-xl font-normal leading-7 text-center md:text-left">Step-by-Step Guide to Achieving Your Business Goals</p>
+    </div> -->
+    </div>
+
+    <div class="flex-row items-center py-16">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 font-light"
+      >
+        <!-- card start-->
+        {
+          charactersData.map(({ name, description, image }) => (
+            <div class="flex flex-col">
+              <div class="p-6 flex flex-col border coal aspect-[3/5]">
+                <div class="w-full h-auto justify-center items-center flex">
+                  <img class="w-full" src={image} />
+                </div>
+                <p class="text-wrap w-full mt-6">{description}</p>
+              </div>
+              <div class="px-6 py-3">
+                <p class="text-xl">{name}</p>
+              </div>
+            </div>
+          ))
+        }
+        <!-- card end-->
+      </div>
+    </div>
+    <div>
+      <CTA>Попробовать</CTA>
+    </div>
+  </Container>
+</section>
