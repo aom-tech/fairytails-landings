@@ -9,9 +9,6 @@ import charactersData from "./Data/characters.json";
   <Container>
     <div class="relative flex flex-col items-center">
       <SectionHeading> Персонажи </SectionHeading>
-      <!-- <div class="flex items-center py-5 md:w-6/12 md:py-10">
-        <p class="text-xl font-normal leading-7 text-center md:text-left">Step-by-Step Guide to Achieving Your Business Goals</p>
-    </div> -->
     </div>
 
     <div class="flex-row items-center py-16">
@@ -22,7 +19,7 @@ import charactersData from "./Data/characters.json";
         {
           charactersData.map(({ name, description, image }) => (
             <div class="flex flex-col">
-              <div class="p-6 flex flex-col border coal aspect-[3/5]">
+              <div class="p-6 flex flex-col border coal md:aspect-[3/5]">
                 <div class="w-full h-auto justify-center items-center flex">
                   <img class="w-full" src={image} />
                 </div>
@@ -38,7 +35,7 @@ import charactersData from "./Data/characters.json";
       </div>
     </div>
     <div>
-      <CTA>Попробовать</CTA>
+      <CTA>Создать</CTA>
     </div>
   </Container>
 </section>

@@ -1,42 +1,167 @@
 ---
-import Container from "./Container.astro"
-import SectionHeading from "./SectionHeading.astro"
+import Container from "./Container.astro";
+import SectionHeading from "./SectionHeading.astro";
 ---
+
 <Container>
-<div class="relative flex flex-col items-center md:flex-row" id="contact">
-    <SectionHeading>
-        Регистрация
-    </SectionHeading>
+  <div class="relative flex flex-col items-center md:flex-row" id="contact">
+    <SectionHeading> Регистрация </SectionHeading>
     <!-- <div class="flex items-center py-5 md:w-8/12 md:py-10">
         <p class="text-xl font-normal leading-7 text-center md:text-left">Connect with Us: Let's Discuss Your Digital Marketing Needs</p>
     </div> -->
-</div>
+  </div>
 
-<div class="relative flex flex-col md:flex-row my-6 border border-coal ">
+  <div class="relative flex flex-col md:flex-row my-6 border border-coal">
     <div class="row items-center py-12 px-4 md:px-20 md:w-8/12 md:py-10">
-        <form action="#" class="space-y-8 md:w-full">
-            <div>
-                <label for="tel" class="block mb-2 text-base text-coal font-light">Name</label>
-                <input type="tel" id="tel" class="shadow-sm bg-beige border text-coal font-light text-base focus:ring-black focus:border-black block w-full p-2.5" placeholder="Телефон" required>
-            </div>
-            <div>
-                <label for="email" class="block mb-2 text-base text-coal font-light">Email</label>
-                <input type="email" id="email" class="block p-3 w-full text-base text-coal font-light bg-beige border shadow-sm focus:ring-black focus:border-black" placeholder="Email" required>
-            </div>
-            <!-- <div class="sm:col-span-2">
+      <form
+        id="form"
+        action="https://api.web3forms.com/submit"
+        class="space-y-8 md:w-full"
+        class="needs-validation"
+        data-astro-reload
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="1e1c2fab-e6f3-4bea-baff-e7ff0d956913"
+        />
+
+        <!-- <input type="checkbox" class="hidden" style="display:none" name="botcheck" /> -->
+
+        <div>
+          <label for="tel" class="block mb-2 text-base text-coal font-light"
+            >Name</label
+          >
+          <input
+            type="tel"
+            id="tel"
+            name="phone"
+            class="shadow-sm bg-beige border text-coal font-light text-base focus:ring-black focus:border-black block w-full p-2.5"
+            placeholder="Телефон"
+            required
+          />
+        </div>
+        <div>
+          <label for="email" class="block mb-2 text-base text-coal font-light"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="block p-3 w-full text-base text-coal font-light bg-beige border shadow-sm focus:ring-black focus:border-black"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <!-- <div class="sm:col-span-2">
                 <label for="message" class="block mb-2 text-base text-coal font-light dark:text-gray-400">Message</label>
                 <textarea id="message" rows="6" class="block p-2.5 w-full text-base text-coal font-light bg-beige shadow-sm border focus:ring-black focus:border-black" placeholder="Message"></textarea>
             </div> -->
-            <button type="submit" class="w-full py-5 border border-ochre justify-center gap-2.5 inline-flex">
-                <div class="text-center text-ochre text-xl font-light leading-7">Отправить</div>
-            </button>
-        </form>
-    </div>
-    <div class="flex-col flex justify-start py-12 px-4 md:px-20 gap-8 font-light text-lg ">
-        <p>Запускемся в мае</p>
-        <p>Оставьте свои контактные данные, чтобы не пропустить и стать Первопроходцем!</p>
-        <p class="text-ochre">Первым 20 пользователем дарим скидку.</p>
-    </div>
-</div>
 
+        <!-- hCaptcha Spam Protection -->
+        <!-- <div class="h-captcha bg-beige" data-captcha="true"></div> -->
+
+        <button
+          type="submit"
+          class="w-full py-5 border border-ochre justify-center gap-2.5 inline-flex hover:border-coal text-ochre hover:text-coal"
+        >
+          <div class="text-center text-xl font-light leading-7">Отправить</div>
+        </button>
+        <div id="result" class="mt-3 text-center"></div>
+      </form>
+    </div>
+    <div
+      class="flex-col flex justify-start py-12 px-4 md:px-20 gap-8 font-light text-lg"
+    >
+      <p>Запускемся в мае</p>
+      <p>
+        Оставьте свои контактные данные, чтобы не пропустить и стать
+        Первопроходцем!
+      </p>
+      <p class="text-ochre">Первым 20 пользователем дарим скидку.</p>
+    </div>
+  </div>
+  <div class="mt-64"></div>
 </Container>
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+
+<script is:inline>
+  // astro:page-load to support view Transitions.
+  // use DOMContentLoaded event if you are not using View Transitions
+
+  document.addEventListener(
+    // "astro:page-load",
+    "DOMContentLoaded",
+    () => {
+      const form = document.getElementById("form");
+      const result = document.getElementById("result");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        form.classList.add("was-validated");
+        if (!form.checkValidity()) {
+          form.querySelectorAll(":invalid")[0].focus();
+          return;
+        }
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        result.innerHTML = "Отправляем...";
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.classList.add("text-green-500");
+              result.innerHTML = "Отправлено. Скоро с вами свяжемся!"
+            } else {
+              console.log(response);
+              result.classList.add("text-red-500");
+              result.innerHTML = json.message;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Ошибка! Проверьте введнные данные!";
+          })
+          .then(function () {
+            form.reset();
+            form.classList.remove("was-validated");
+            setTimeout(() => {
+              result.style.display = "none";
+            }, 5000);
+          });
+      });
+    },
+    { once: true }
+  );
+</script>
