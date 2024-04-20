@@ -26,7 +26,9 @@ export default {
 		  900: "#191A23",
 		},
 		ochre: '#E4A956',
+		darkochre: '#b68745',
 		beige: '#FFFAF1',
+		darkbeige: '#FFFAF1',
 		coal: '#666460'
 	  },
 	  extend: {

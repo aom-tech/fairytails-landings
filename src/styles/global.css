@@ -43,10 +43,10 @@
 
 @layer components {
   .button {
-      @apply inline-flex items-center border space-x-5 border-ochre px-4 py-3 justify-center text-ochre hover:border-coal hover:text-coal;
+      @apply inline-flex items-center border space-x-5 border-ochre px-4 py-3 justify-center text-ochre hover:border-darkochre hover:text-darkochre rounded-lg;
   }
   .button:hover > svg {
-    @apply fill-coal;
+    @apply fill-darkochre;
   }
 }
 

@@ -1,22 +1,51 @@
 ---
 import Container from "./Container.astro"
+import Logo from "./Logo.astro";
+
+// Define your navigation links here
+const navLinks = [
+  { href: '/#how', label: 'Как это работает?' },
+  { href: '/#features', label: 'Возможности' },
+  { href: '/#cases', label: 'Примеры' },
+];
+
 ---
-<footer class="bg-fixed bg-bottom border-t border-coal">
+<footer class="bg-fixed bg-bottom bg-coal">
     <Container>
-    <div class="py-6">
-        <div class="flex flex-col items-center justify-between md:flex-row">
-            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img class="w-auto" src="/Logo.svg" alt="Logo">
-            </div>
-            <div class="flex mt-4 md:m-0">
-                <div class="-mx-4">
-                    @ <span id="currentYear"></span> AOM | Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="underline">Astro</a></div>
-                </div>
+        <div class="py-3 md:py-6">
+          <div class="flex flex-wrap items-center justify-center mx-auto border-y border-ochre">
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse max-w-[80%]">
+              <Logo />
+            </a>
+          </div>
+          <div class="w-full md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col py-4 md:py-12 md:mt-8 rounded-lg md:flex-row md:flex-wrap md:justify-evenly mt-4">
+                {navLinks.map(link => (
+                <li>
+                    <a href={link.href} class="block py-2 px-3 md:bg-transparent md:p-0 text-darkbeige hover:text-ochre ">{link.label}</a>
+                </li>
+                ))}
+                <li class="md:w-full md:flex md:justify-center mt-8 md:mt-20 px-3">
+                  <a class="px-4 py-2 md:px-6 md:py-4 border rounded-lg border-ochre hover:text-darkochre hover:border-darkochre text-ochre inline-flex" href="#contact">
+                    <h2 class="text-center text-xl md:text-4xl font-normal leading-7 md:leading-10">Войти</h2>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <!-- <div class="w-full md:hidden md:w-auto" id="navbar-default">
+            <a class="px-9 py-5 border border-ochre text-ochre hover:text-coal hover:border-coal inline-flex" href="#contact">
+              <h2 class="text-center text-xl font-normal leading-7">Войти</h2>
+            </a>
+          </div> -->
+        </div>
+        <div class="flex justify-center mt-4 md:m-0 text-ochre">
+            <div class="pb-4">
+                @ <span id="currentYear"></span> AOM | Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="underline">Astro</a></div>
             </div>
         </div>
-    </div>
-    </Container>
+      </Container>
 </footer>
+
 
 <script is:inline>
     const year = new Date().getFullYear();

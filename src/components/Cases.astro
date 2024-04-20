@@ -14,26 +14,26 @@ import casesData from "./Data/cases.json";
     </div> -->
     </div>
 
-    <div class="flex-row items-center py-16">
+    <div class="flex-row items-center py-6 md:py-16">
       <div
         class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 font-light"
       >
         <!-- card start-->
         {
-          casesData.map(({ name, description, image }) => (
+          casesData.map(({ id, name, description, image }) => (
             <div class="flex flex-col">
-              <div class="p-6 flex flex-col border coal  md:aspect-[3/4]">
-                <div class="w-full md:w-2/3 h-auto justify-start items-center flex">
-                  <img class="w-full" src={image} />
+              <div class="p-5 flex flex-col border coal rounded-[32px] md:aspect-[3/4]">
+                <div class="w-full h-auto justify-start items-center flex">
+                  <img class="w-full rounded-3xl aspect-[4/3] object-cover" src={image} />
                 </div>
                 <div class="mt-6 text-wrap">
                   <p class="text-lg font-normal mb-1">{name}</p>
                   <p>{description}</p>
                 </div>
                 <button
-                  data-modal-target="default-modal"
-                  data-modal-toggle="default-modal"
-                  class="flex items-center mt-6 md:mt-auto gap-3 font-normal hover:text-ochre hover:fill-ochre cursor-pointer"
+                  data-modal-target={"modal-case-" + id}
+                  data-modal-toggle={"modal-case-" + id}
+                  class="flex items-center mt-6 md:mt-auto gap-3 font-light text-xl text-ochre hover:text-darkochre hover:fill-darkochre cursor-pointer"
                 >
                   Открыть{" "}
                   <svg
@@ -55,69 +55,69 @@ import casesData from "./Data/cases.json";
     </div>
   </Container>
 
-  <!-- Main modal -->
-  <div
-    id="default-modal"
-    tabindex="-1"
-    aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
-  >
-    <div class="relative p-4 w-full max-w-2xl max-h-full">
-      <!-- Modal content -->
-      <div class="relative bg-white shadow border border-coal">
-        <!-- Modal header -->
-        <div
-          class="flex items-center justify-between p-4 md:p-5 border-b border-coal"
-        >
-          <h3 class="text-xl font-semibold text-gray-900">Terms of Service</h3>
-          <button
-            type="button"
-            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-            data-modal-hide="default-modal"
-          >
-            <svg
-              class="w-3 h-3"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 14"
+  <!-- Modals -->
+  {
+    casesData.map(({ id, name, description, image, content }) => (
+      <div
+        id={"modal-case-" + id}
+        tabindex="-1"
+        aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+      >
+        <div class="relative p-4 w-full max-w-2xl max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white shadow border border-coal">
+            <!-- Modal header -->
+            <div
+              class="flex items-center justify-between p-4 md:p-5 border-b border-coal"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
-            </svg>
-            <span class="sr-only">Close modal</span>
-          </button>
-        </div>
-        <!-- Modal body -->
-        <div class="p-4 md:p-5 space-y-4">
-          <p class="text-base leading-relaxed text-gray-500">
-            With less than a month to go before the European Union enacts new
-            consumer privacy laws for its citizens, companies around the world
-            are updating their terms of service agreements to comply.
-          </p>
-          <p class="text-base leading-relaxed text-gray-500">
-            The European Union’s General Data Protection Regulation (G.D.P.R.)
-            goes into effect on May 25 and is meant to ensure a common set of
-            data rights in the European Union. It requires organizations to
-            notify users as soon as possible of high-risk data breaches that
-            could personally affect them.
-          </p>
-        </div>
-        <!-- Modal footer -->
-        <div class="flex items-center p-4 md:p-5 border-t border-coal">
-          <button
-            data-modal-hide="default-modal"
-            type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          >
-            <CTA>Создать свою</CTA></button
-          >
+              <h3 class="text-xl font-semibold text-gray-900">{ name }</h3>
+              <button
+                type="button"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide={"modal-case-" + id}
+              >
+                <svg
+                  class="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                </svg>
+                <span class="sr-only">Закрыть</span>
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+              {
+                content?.map(text => (
+                  <p class="text-base leading-relaxed text-gray-500">
+                    { text }
+                  </p>
+                ))
+              }
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-coal">
+              <button
+                data-modal-hide={"modal-case-" + id}
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              >
+                <CTA>Создать свою</CTA></button
+              >
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+  ))
+}
 </section>
+

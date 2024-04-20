@@ -13,20 +13,20 @@ import charactersData from "./Data/characters.json";
 
     <div class="flex-row items-center py-16">
       <div
-        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 font-light"
+        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 font-light"
       >
         <!-- card start-->
         {
           charactersData.map(({ name, description, image }) => (
             <div class="flex flex-col">
-              <div class="p-6 flex flex-col border coal md:aspect-[3/5]">
+              <div class="p-6 flex flex-col border coal md:aspect-[3/5] rounded-[32px]">
                 <div class="w-full h-auto justify-center items-center flex">
-                  <img class="w-full" src={image} />
+                  <img class="w-full rounded-3xl" src={image} />
                 </div>
                 <p class="text-wrap w-full mt-6">{description}</p>
               </div>
-              <div class="px-6 py-3">
-                <p class="text-xl">{name}</p>
+              <div class="py-3">
+                <p class="text-xl text-black">{name}</p>
               </div>
             </div>
           ))

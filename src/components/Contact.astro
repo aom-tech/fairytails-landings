@@ -11,8 +11,8 @@ import SectionHeading from "./SectionHeading.astro";
     </div> -->
   </div>
 
-  <div class="relative flex flex-col md:flex-row my-6 border border-coal">
-    <div class="row items-center py-12 px-4 md:px-20 md:w-8/12 md:py-10">
+  <div class="relative flex flex-col-reverse lg:flex-row my-6">
+    <div class="row items-center md:px-20 md:w-8/12 md:py-10">
       <form
         id="form"
         action="https://api.web3forms.com/submit"
@@ -31,13 +31,13 @@ import SectionHeading from "./SectionHeading.astro";
 
         <div>
           <label for="tel" class="block mb-2 text-base text-coal font-light"
-            >Name</label
+            >Телефон</label
           >
           <input
             type="tel"
             id="tel"
             name="phone"
-            class="shadow-sm bg-beige border text-coal font-light text-base focus:ring-black focus:border-black block w-full p-2.5"
+            class="shadow-sm  rounded-lg bg-beige border text-coal font-light text-base focus:ring-black focus:border-black block w-full p-2.5"
             placeholder="Телефон"
             required
           />
@@ -50,7 +50,7 @@ import SectionHeading from "./SectionHeading.astro";
             type="email"
             id="email"
             name="email"
-            class="block p-3 w-full text-base text-coal font-light bg-beige border shadow-sm focus:ring-black focus:border-black"
+            class="block rounded-lg p-3 w-full text-base text-coal font-light bg-beige border shadow-sm focus:ring-black focus:border-black"
             placeholder="Email"
             required
           />
@@ -65,7 +65,7 @@ import SectionHeading from "./SectionHeading.astro";
 
         <button
           type="submit"
-          class="w-full py-5 border border-ochre justify-center gap-2.5 inline-flex hover:border-coal text-ochre hover:text-coal"
+          class="w-full py-5 border rounded-lg border-ochre justify-center gap-2.5 inline-flex hover:border-coal text-ochre hover:text-coal"
         >
           <div class="text-center text-xl font-light leading-7">Отправить</div>
         </button>
@@ -73,17 +73,17 @@ import SectionHeading from "./SectionHeading.astro";
       </form>
     </div>
     <div
-      class="flex-col flex justify-start py-12 px-4 md:px-20 gap-8 font-light text-lg"
+      class="flex-col flex justify-start md:px-20 md:py-10 gap-4 md:gap-8 font-light text-lg lg:mt-8"
     >
-      <p>Запускемся в мае</p>
-      <p>
+      <h2 class="font-kudry text-darkochre text-4xl md:text-5xl">Запускаемся в мае</h2>
+      <p class="text-xl">
         Оставьте свои контактные данные, чтобы не пропустить и стать
         Первопроходцем!
       </p>
-      <p class="text-ochre">Первым 20 пользователем дарим скидку.</p>
+      <p class="text-ochre font-light">* Первым 20 пользователем дарим скидку.</p>
     </div>
   </div>
-  <div class="mt-64"></div>
+  <div class="md:mt-48"></div>
 </Container>
 
 <style>
