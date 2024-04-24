@@ -19,13 +19,13 @@ const navLinks = [
             </a>
           </div>
           <div class="w-full md:w-auto" id="navbar-default">
-            <ul class="font-medium flex flex-col py-4 md:py-12 md:mt-8 rounded-lg md:flex-row md:flex-wrap md:justify-evenly mt-4">
+            <ul class="font-medium flex flex-col py-4 md:py-12 md:mt-8 rounded-lg md:grid md:grid-cols-3 md:justify-items-center mt-4">
                 {navLinks.map(link => (
                 <li>
                     <a href={link.href} class="block py-2 px-3 md:bg-transparent md:p-0 text-darkbeige hover:text-ochre ">{link.label}</a>
                 </li>
                 ))}
-                <li class="md:w-full md:flex md:justify-center mt-8 md:mt-20 px-3">
+                <li class="md:col-start-2 md:w-full md:flex md:justify-center mt-8 md:mt-20 px-3">
                   <a class="px-4 py-2 md:px-6 md:py-4 border rounded-lg border-ochre hover:text-darkochre hover:border-darkochre text-ochre inline-flex" href="#contact">
                     <h2 class="text-center text-xl md:text-4xl font-normal leading-7 md:leading-10">Войти</h2>
                   </a>

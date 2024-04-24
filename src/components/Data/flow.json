@@ -7,7 +7,7 @@
             "bid": "accordion-open-body-1",
             "target": "#accordion-open-body-1",
             "title": "Выберите возраст ребенка",
-            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+            "description": "Это поможет нам предложить сказки, которые будут соответствовать развитию и восприятию вашего ребенка. Мы подберем контент, способствующий развитию воображения и навыков чтения.",
             "image": "/cases/mike-on-boat.webp"
         },
         {
@@ -15,8 +15,8 @@
             "hid": "accordion-open-heading-2",
             "bid": "accordion-open-body-2",
             "target": "#accordion-open-body-2",
-            "title": "Укажи его инетресы",
-            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+            "title": "Укажи его интересы",
+            "description": "Выбор интересов поможет нам предложить сказки, которые будут захватывать внимание вашего ребенка и соответствовать его увлечениям. Мы подберем истории, способные вдохновить и развить креативное мышление малыша.",
             "image": "/cases/mike-on-boat.webp"
         },
         {
@@ -25,7 +25,7 @@
             "bid": "accordion-open-body-3",
             "target": "#accordion-open-body-3",
             "title": "Выбери персонажа или создай своего",
-            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+            "description": "В нашем сервисе вы можете выбрать одного из любимых героев с уже готовыми историями или же вдохновиться и создать собственного уникального персонажа. Мы поможем оживить вашего героя в захватывающих сказках, которые будут развлекать и учить вашего ребенка.",
             "image": "/cases/mike-on-boat.webp"
         },
         {
@@ -34,7 +34,7 @@
             "bid": "accordion-open-body-4",
             "target": "#accordion-open-body-4",
             "title": "Выбери тематику сказки и мораль",
-            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+            "description": "Выбор тематики и морали сказки позволяет вам направить обучение и развитие вашего ребенка в желаемом направлении. У нас вы найдете разнообразные сюжеты и уроки, которые помогут ребенку усвоить важные жизненные ценности через захватывающие истории.",
             "image": "/cases/mike-on-boat.webp"
         },
         {
@@ -43,7 +43,7 @@
             "bid": "accordion-open-body-5",
             "target": "#accordion-open-body-5",
             "title": "Придумай место событий и детали сказки",
-            "description": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+            "description": "Определите место действия и уникальные детали для вашей сказки, чтобы сделать историю по-настоящему уникальной. Персонализируйте сказки, добавляя элементы, которые будут вдохновлять и увлекать вашего ребенка.",
             "image": "/cases/mike-on-boat.webp"
         }
     ]
