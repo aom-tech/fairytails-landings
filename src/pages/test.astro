@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Story from '../components/Story.vue';
 
 import casesV2 from '../components/Data/cases_v2.json'
+import cases from '../components/Data/cases.json'
 ---
 
 <Layout title="ЧарующиеСказки">
-	<main>
+	<!-- <main>
         Выбор:
 		<div class="choice-tabs">
             <div class="tab">
@@ -18,9 +19,9 @@ import casesV2 from '../components/Data/cases_v2.json'
                 <label for="tab-btn-2">2. Исследовать магическую пещеру вместе с драконом</label>
             </div>
         </div>
-	</main>
+	</main> -->
 
-    <Story client:idle content={casesV2} />
+    <Story client:idle content={cases[1].content} />
 </Layout>
 
 <style>
