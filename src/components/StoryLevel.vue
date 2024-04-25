@@ -14,7 +14,7 @@ const onSelected = (newContent) => {
     <div>
         <template v-for="item in content">
             <template v-if="typeof item === 'object'">
-                <form  class="flex flex-col items-start space-y-2">
+                <form  class="flex flex-col items-start space-y-2 mt-6 mb-12">
                     Выбор:
                     <template v-for="(key, idx) in Object.keys(item)">
                         <input :id="`option-${level}-radio-${idx}`" name="tab-btn" type="radio" @change="(v) => onSelected(item[key])">
