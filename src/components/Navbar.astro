@@ -20,11 +20,11 @@ import Logo from "./Logo.astro";
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-12 h-10 md:w-16 md:h-16 justify-center text-sm rounded-lg md:block focus:outline-none outline-none" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Открыть меню</span>
 
-            <svg class="text-ochre" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="80" height="4" rx="2" fill="currentColor"/>
-              <rect y="12" width="80" height="4" rx="2" fill="currentColor"/>
-              <rect y="24" width="80" height="4" rx="2" fill="currentColor"/>
-            </svg>
+            <div class="w-full space-y-1">
+              <div class="h-0.5 rounded-sm bg-ochre" />
+              <div class="h-0.5 rounded-sm bg-ochre" />
+              <div class="h-0.5 rounded-sm bg-ochre" />
+            </div>
         </button>
       </div>
       <div class="hidden w-full md:w-auto" id="navbar-default">
