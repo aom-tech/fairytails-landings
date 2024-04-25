@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Story from '../components/Story.vue';
+
+import casesV2 from '../components/Data/cases_v2.json'
+---
+
+<Layout title="ЧарующиеСказки">
+	<main>
+        Выбор:
+		<div class="choice-tabs">
+            <div class="tab">
+                <input id="tab-btn-1" name="tab-btn" type="radio" value="">
+                <label for="tab-btn-1">1. Отправиться на поиск сокровища в лесу</label>
+            </div>
+            <div class="tab">
+                <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+                <label for="tab-btn-2">2. Исследовать магическую пещеру вместе с драконом</label>
+            </div>
+        </div>
+	</main>
+
+    <Story client:idle content={casesV2} />
+</Layout>
+
+<style>
+    .choice-tabs {
+        padding: 10px 0;
+    }
+
+   .tab > input[type="radio"] {
+        display: none;
+    }
+
+    .choice-tabs > input[type="radio"]:checked + label {
+        @apply border-ochre text-ochre
+    }   
+    
+    .tab {
+        padding: 10px;
+        @apply border border-coal;
+    }
+
+    .tab:not(:first-child) {
+        @apply mt-2;
+    }
+
+    .tab:has(input[type="radio"]:checked) {
+        @apply border-ochre text-ochre
+    }
+</style>
