@@ -14,20 +14,20 @@ const onSelected = (newContent) => {
     <div>
         <template v-for="item in content">
             <template v-if="typeof item === 'object'">
-            <form  class="flex flex-col items-start space-y-2">
-                Выбор:
-                <template v-for="(key, idx) in Object.keys(item)">
-                    <input :id="`option-${level}-radio-${idx}`" name="tab-btn" type="radio" @change="(v) => onSelected(item[key])">
-                    <label :for="`option-${level}-radio-${idx}`">{{ idx }}. {{key}}</label>
-                </template>
-            </form>
-        </template>
-        <template v-else-if="typeof item === 'string' && item.includes('/')">
-            <img >{{ item }}</img>
-        </template>
-        <template v-else >
-            <p class="py-3">{{ item }}</p>
-        </template>
+                <form  class="flex flex-col items-start space-y-2">
+                    Выбор:
+                    <template v-for="(key, idx) in Object.keys(item)">
+                        <input :id="`option-${level}-radio-${idx}`" name="tab-btn" type="radio" @change="(v) => onSelected(item[key])">
+                        <label :for="`option-${level}-radio-${idx}`">{{ idx }}. {{key}}</label>
+                    </template>
+                </form>
+            </template>
+            <template v-else-if="typeof item === 'string' && item.includes('/')">
+                <img class="py-2" :src="item" />
+            </template>
+            <template v-else >
+                <p class="py-3">{{ item }}</p>
+            </template>
         </template>
     </div>
 </template>
