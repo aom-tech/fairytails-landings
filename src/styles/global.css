@@ -38,6 +38,11 @@
 }
 
 @font-face {
+  font-family: 'Kudry';
+  src: url('kudry_weird-headline.otf');
+}
+
+@font-face {
   font-family: 'LenaCustom';
   src: url('lenaCustom.ttf');
 }

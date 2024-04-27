@@ -34,6 +34,7 @@ export default {
 	  extend: {
 		fontFamily: {
 			lena: ["LenaCustom", "sans-serif"],
+			kudry: ["Kudry", "sans-serif"],
 			montserrat: ["Montserrat", "sans-serif"]
 		}
 	  },
