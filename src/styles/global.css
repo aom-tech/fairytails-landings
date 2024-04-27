@@ -15,7 +15,7 @@
     @apply text-coal font-montserrat font-light;
   }
   h1, h2 {
-    @apply font-kudry;
+    @apply font-lena;
   }
 }
 
@@ -38,8 +38,8 @@
 }
 
 @font-face {
-  font-family: 'Kudry';
-  src: url('kudry_weird-headline.otf');
+  font-family: 'LenaCustom';
+  src: url('lenaCustom.ttf');
 }
 
 @layer components {

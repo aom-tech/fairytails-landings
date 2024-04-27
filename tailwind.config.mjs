@@ -33,7 +33,7 @@ export default {
 	  },
 	  extend: {
 		fontFamily: {
-			kudry: ["Kudry", "sans-serif"],
+			lena: ["LenaCustom", "sans-serif"],
 			montserrat: ["Montserrat", "sans-serif"]
 		}
 	  },
