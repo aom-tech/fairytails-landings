@@ -4,7 +4,7 @@ import CTA from "./CTA.astro";
 ---
 <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
-<section id="hero" class="relative py-0">
+<section id="hero" class="relative py-0 overflow-x-hidden">
   <Container>
     <div
       class="relative flex flex-col items-center justify-center md:flex-row"
@@ -19,9 +19,29 @@ import CTA from "./CTA.astro";
         </div>
       </div>
       <div class="flex md:block justify-evenly">
-        <img src="/hero/forest-animals.png" class="md:absolute left-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
-        <img src="/hero/forest-fairy-read-wo-bg.png" class="md:absolute right-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
+        <img src="/hero/forest-animals.png" class="hero-left md:absolute left-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
+        <img src="/hero/forest-fairy-read-wo-bg.png" class="hero-right md:absolute right-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
       </div>
     </div>
   </Container>
 </section>
+
+<style>
+.hero-left {
+  animation: from-left 500ms ease-in-out;
+}
+
+.hero-right {
+  animation: from-right 500ms ease-in-out;
+}
+
+@keyframes from-left {
+  from { transform: translateX(-110%); }
+  to { transform: translateX(0) }
+}
+
+@keyframes from-right {
+  from { transform: translateX(120%); }
+  to { transform: translateX(0) }
+}
+</style>
