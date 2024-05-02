@@ -4,25 +4,23 @@ import CTA from "./CTA.astro";
 ---
 <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
-<section id="hero" class="overflow-hidden">
+<section id="hero" class="relative py-0">
   <Container>
     <div
-      class="relative flex flex-col-reverse items-center justify-center md:flex-row"
+      class="relative flex flex-col items-center justify-center md:flex-row"
       id="hero"
     >
-      <div class="left-[55%] -bottom-[30%] absolute md:bottom-0 md:left-0">
-        <dotlottie-player src="/lottie/flower.json" background="transparent" speed="0.5" style="width: 300px; height: 300px;" autoplay></dotlottie-player>
-      </div>
-      <div class="row items-center py-5 md:w-6/12 md:py-36">
-        <div class="text-center space-y-32">
+      <div class="row items-center py-12 md:w-6/12 md:py-36">
+        <div class="text-center space-y-12 md:space-y-32">
           <h1 class="text-4xl font-medium leading-none md:text-6xl uppercase">
             Создай сказку своему ребенку <br/> за <span class="text-ochre">1</span> минуту
           </h1>
           <CTA>Создать</CTA>
         </div>
       </div>
-      <div class=" hidden md:block absolute -bottom-[50%] -right-[20%] md:-bottom-[15%] md:right-0">
-        <dotlottie-player src="https://lottie.host/6aaed472-b6de-49c8-be25-58ca2ac6c57d/cmsuEMuG74.json" background="transparent" speed="0.65" style="width: 300px; height: 300px;" autoplay></dotlottie-player>
+      <div class="flex md:block justify-evenly">
+        <img src="/hero/forest-animals.png" class="md:absolute left-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
+        <img src="/hero/forest-fairy-read-wo-bg.png" class="md:absolute right-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
       </div>
     </div>
   </Container>

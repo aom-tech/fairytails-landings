@@ -1,7 +1,7 @@
 <script setup>
 import { defineProps } from 'vue'
 
-const { content, level } = defineProps({ content: Array, level: Number })
+const { content, level, storyId } = defineProps({ content: Array, level: Number, storyId: Number })
 
 const emit = defineEmits(['select'])
 
@@ -14,11 +14,11 @@ const onSelected = (newContent) => {
     <div>
         <template v-for="item in content">
             <template v-if="typeof item === 'object'">
-                <form  class="flex flex-col items-start space-y-2 mt-6 mb-12">
+                <form  class="flex flex-col items-start space-y-2 mt-6 mb-12" :id="`${storyId}-form-${level}`">
                     Выбор:
                     <template v-for="(key, idx) in Object.keys(item)">
-                        <input :id="`option-${level}-radio-${idx}`" name="tab-btn" type="radio" @change="(v) => onSelected(item[key])">
-                        <label :for="`option-${level}-radio-${idx}`">{{ idx }}. {{key}}</label>
+                        <input :id="`${storyId}-option-${level}-radio-${idx}`" type="radio" :name="`${storyId}-option-${level}-radio`" @change="(v) => onSelected(item[key])">
+                        <label :for="`${storyId}-option-${level}-radio-${idx}`">{{key}}</label>
                     </template>
                 </form>
             </template>
