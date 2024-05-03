@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -33,9 +35,9 @@ export default {
 	  },
 	  extend: {
 		fontFamily: {
-			lena: ["LenaCustom", 'Trebuchet MS', 'Arial', "sans-serif"],
-			kudry: ["Kudry", 'Trebuchet MS', 'Arial', "sans-serif"],
-			montserrat: ["Montserrat", "sans-serif"]
+			lena: ["LenaCustom", ...defaultTheme.fontFamily.sans],
+			kudry: ["Kudry", ...defaultTheme.fontFamily.sans],
+			montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans]
 		}
 	  },
 	},
