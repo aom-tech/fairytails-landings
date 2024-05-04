@@ -2,7 +2,6 @@
 import Container from "./Container.astro";
 import SectionHeading from "./SectionHeading.astro";
 ---
-<script src="https://forms.yandex.ru/_static/embed.js"></script>
 
 <Container>
   <div class="relative flex flex-col items-center md:flex-row" id="contact">
@@ -13,28 +12,14 @@ import SectionHeading from "./SectionHeading.astro";
   </div>
 
   <div class="relative flex flex-col-reverse lg:flex-row my-6">
-    <div class="row items-center md:w-8/12 min-h-[550px]"> 
-      <!-- md:px-20  md:py-10 -->
-      <iframe src="https://forms.yandex.ru/cloud/6636131443f74fd9da5ffa21/?iframe=1" name="ya-form-6636131443f74fd9da5ffa21" width="100%" height="100%"></iframe>
-
+    <div class="row items-center md:px-20 md:w-8/12 md:py-10">
       <form
-
-        style="display: none"
-        id="form"
-        action="https://api.web3forms.com/submit"
+        id="form1"
         class="space-y-8 md:w-full"
         class="needs-validation"
         data-astro-reload
         method="POST"
       >
-        <input
-          type="hidden"
-          name="access_key"
-          value="1e1c2fab-e6f3-4bea-baff-e7ff0d956913"
-        />
-
-        <!-- <input type="checkbox" class="hidden" style="display:none" name="botcheck" /> -->
-
         <div>
           <label for="tel" class="block mb-2 text-base text-coal font-light"
             >Телефон</label
@@ -42,7 +27,7 @@ import SectionHeading from "./SectionHeading.astro";
           <input
             type="tel"
             id="tel"
-            name="phone"
+            name="Phone"
             class="shadow-sm  rounded-lg bg-beige border text-coal font-light text-base focus:ring-black focus:border-black block w-full p-2.5"
             placeholder="Телефон"
             required
@@ -55,22 +40,15 @@ import SectionHeading from "./SectionHeading.astro";
           <input
             type="email"
             id="email"
-            name="email"
+            name="Email"
             class="block rounded-lg p-3 w-full text-base text-coal font-light bg-beige border shadow-sm focus:ring-black focus:border-black"
             placeholder="Email"
             required
           />
         </div>
-        <!-- <div class="sm:col-span-2">
-                <label for="message" class="block mb-2 text-base text-coal font-light dark:text-gray-400">Message</label>
-                <textarea id="message" rows="6" class="block p-2.5 w-full text-base text-coal font-light bg-beige shadow-sm border focus:ring-black focus:border-black" placeholder="Message"></textarea>
-            </div> -->
-
-        <!-- hCaptcha Spam Protection -->
-        <!-- <div class="h-captcha bg-beige" data-captcha="true"></div> -->
-
         <button
           type="submit"
+          id="submit"
           class="w-full py-5 border rounded-lg border-ochre justify-center gap-2.5 inline-flex hover:border-coal text-ochre hover:text-coal"
         >
           <div class="text-center text-xl font-light leading-7">Отправить</div>
@@ -89,7 +67,7 @@ import SectionHeading from "./SectionHeading.astro";
       <p class="text-ochre font-light">* Первым 20 пользователем дарим МЕСЯЦ бесплатного пользования.</p>
     </div>
   </div>
-  <!-- <div class="md:mt-48"></div> -->
+  <div class="md:mt-48"></div>
 </Container>
 
 <style>
@@ -113,37 +91,20 @@ import SectionHeading from "./SectionHeading.astro";
 </style>
 
 <script is:inline>
-  // astro:page-load to support view Transitions.
-  // use DOMContentLoaded event if you are not using View Transitions
+   const form = document.querySelector("#form1")
+   const submitButton = document.querySelector("#submit")
+   const result = document.querySelector("#result");
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbydCC9NHPg9UZS81h9rolb46k5m9OzamQrLG7riqY_fw4mKYYpNZGptoJJQOm4AfKsR/exec'
 
-  document.addEventListener(
-    // "astro:page-load",
-    "DOMContentLoaded",
-    () => {
-      const form = document.getElementById("form");
-      const result = document.getElementById("result");
+   form.addEventListener('submit', e => {
+     submitButton.disabled = true
+     e.preventDefault()
+     let formData = new FormData(form)
+     formData.append('UTM', window.location)
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        form.classList.add("was-validated");
-        if (!form.checkValidity()) {
-          form.querySelectorAll(":invalid")[0].focus();
-          return;
-        }
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+     result.innerHTML = "Отправляем..."
 
-        result.innerHTML = "Отправляем...";
-
-        fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: json,
-        })
+     fetch(scriptURL, { method: 'POST', body: formData})
           .then(async (response) => {
             let json = await response.json();
             if (response.status == 200) {
@@ -160,14 +121,9 @@ import SectionHeading from "./SectionHeading.astro";
             result.innerHTML = "Ошибка! Проверьте введнные данные!";
           })
           .then(function () {
+            submitButton.innerHTML = 'Отправить снова'
             form.reset();
             form.classList.remove("was-validated");
-            setTimeout(() => {
-              result.style.display = "none";
-            }, 5000);
           });
-      });
-    },
-    { once: true }
-  );
+   })
 </script>
