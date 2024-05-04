@@ -14,7 +14,7 @@ import SectionHeading from "./SectionHeading.astro";
   <div class="relative flex flex-col-reverse lg:flex-row my-6">
     <div class="row items-center md:px-20 md:w-8/12 md:py-10">
       <form
-        id="form1"
+        id="form"
         class="space-y-8 md:w-full"
         class="needs-validation"
         data-astro-reload
@@ -97,7 +97,7 @@ import SectionHeading from "./SectionHeading.astro";
 
 <!-- Form submittion -->
 <script is:inline>
-   const form = document.querySelector("#form1")
+   const form = document.querySelector("#form")
    const submitButton = document.querySelector("#submit")
    const result = document.querySelector("#result");
    const scriptURL = 'https://script.google.com/macros/s/AKfycbydCC9NHPg9UZS81h9rolb46k5m9OzamQrLG7riqY_fw4mKYYpNZGptoJJQOm4AfKsR/exec'
