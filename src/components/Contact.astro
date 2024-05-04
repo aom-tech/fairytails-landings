@@ -46,6 +46,9 @@ import SectionHeading from "./SectionHeading.astro";
             required
           />
         </div>
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
         <button
           type="submit"
           id="submit"
@@ -69,7 +72,6 @@ import SectionHeading from "./SectionHeading.astro";
   </div>
   <div class="md:mt-48"></div>
 </Container>
-
 <style>
   .invalid-feedback,
   .empty-feedback {
@@ -90,6 +92,10 @@ import SectionHeading from "./SectionHeading.astro";
   }
 </style>
 
+<!-- UTM quering -->
+<script is:inline>var queryForm=function(e){var t=!(!e||!e.reset)&&e.reset,n=window.location.toString().split("?");if(n.length>1){var o=n[1].split("&");for(s in o){var r=o[s].split("=");(t||null===sessionStorage.getItem(r[0]))&&sessionStorage.setItem(r[0],decodeURIComponent(r[1]))}}for(var i=document.querySelectorAll("input[type=hidden], input[type=text]"),s=0;s<i.length;s++){var a=sessionStorage.getItem(i[s].name);a&&(document.getElementsByName(i[s].name)[0].value=a)}};setTimeout(function(){queryForm()},3e3);</script>
+
+<!-- Form submittion -->
 <script is:inline>
    const form = document.querySelector("#form1")
    const submitButton = document.querySelector("#submit")
@@ -100,7 +106,7 @@ import SectionHeading from "./SectionHeading.astro";
      submitButton.disabled = true
      e.preventDefault()
      let formData = new FormData(form)
-     formData.append('UTM', window.location)
+     formData.append('URL', window.location)
 
      result.innerHTML = "Отправляем..."
 
