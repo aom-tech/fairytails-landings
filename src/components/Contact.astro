@@ -1,6 +1,7 @@
 ---
 import Container from "./Container.astro";
 import SectionHeading from "./SectionHeading.astro";
+const { hasPhone } = Astro.props;
 ---
 
 <Container>
@@ -12,7 +13,7 @@ import SectionHeading from "./SectionHeading.astro";
   </div>
 
   <div class="relative flex flex-col-reverse lg:flex-row my-6">
-    <div class="row items-center md:px-20 md:w-8/12 md:py-10">
+    <div class:list={["row items-center md:px-20 md:w-8/12 md:py-10", { "mt-12": !hasPhone }]}>
       <form
         id="form"
         class="space-y-8 md:w-full"
@@ -20,7 +21,7 @@ import SectionHeading from "./SectionHeading.astro";
         data-astro-reload
         method="POST"
       >
-        <div>
+        { hasPhone && <div>
           <label for="tel" class="block mb-2 text-base text-coal font-light"
             >Телефон</label
           >
@@ -33,6 +34,7 @@ import SectionHeading from "./SectionHeading.astro";
             required
           />
         </div>
+      }
         <div>
           <label for="email" class="block mb-2 text-base text-coal font-light"
             >Email</label

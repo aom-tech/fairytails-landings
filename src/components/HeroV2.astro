@@ -1,0 +1,46 @@
+---
+import Container from "./Container.astro";
+import CTA from "./CTA.astro";
+---
+
+<section id="hero" class="relative py-0 overflow-x-hidden">
+  <Container>
+    <div
+      class="relative flex flex-col items-center justify-center md:flex-row"
+      id="hero"
+    >
+      <div class="row items-center py-12 md:w-6/12 md:py-18">
+        <div class="text-center space-y-12 md:space-y-32">
+          <h1 class="text-4xl font-medium leading-none md:text-6xl uppercase">
+            Создай сказку своему ребенку <br/> за <span class="text-ochre">1</span> минуту
+          </h1>
+          <CTA type="filled">Создать</CTA>
+        </div>
+      </div>
+      <div class="flex md:block justify-evenly">
+        <img src="/hero/forest-animals.png" class="hero-left md:absolute left-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
+        <img src="/hero/forest-fairy-read-wo-bg.png" class="hero-right md:absolute right-0 -bottom-10 md:bottom-0 w-1/2 md:w-1/4"/>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+.hero-left {
+  animation: from-left 500ms ease-in-out;
+}
+
+.hero-right {
+  animation: from-right 500ms ease-in-out;
+}
+
+@keyframes from-left {
+  from { transform: translateX(-110%); }
+  to { transform: translateX(0) }
+}
+
+@keyframes from-right {
+  from { transform: translateX(120%); }
+  to { transform: translateX(0) }
+}
+</style>

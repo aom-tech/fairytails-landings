@@ -1,26 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
 import Contact from '../components/Contact.astro';
 import Flow from '../components/Flow.astro';
 import How from '../components/How.astro';
 import Features from '../components/Features.astro';
 import Characters from '../components/Characters.astro'
 import Cases from '../components/Cases.astro';
+import HeroV2 from '../components/HeroV2.astro';
 ---
 
 <Layout title="ЧарующиеСказки">
 	<main>
-		<Hero/>
+		<HeroV2/>
 		<Flow />
 		<How />
 		<Features />
 		<Characters />
 		<Cases />
-		<!-- <Services/>
-		<Case/>
-		<Team/>
-		<Testimonial/> -->
-		<Contact hasPhone="true"/>
+		<Contact/>
 	</main>
 </Layout>

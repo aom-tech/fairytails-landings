@@ -54,6 +54,12 @@
   .button:hover > svg {
     @apply fill-darkochre;
   }
+  .button.button-filled {
+    @apply bg-ochre text-beige hover:bg-darkochre border-none hover:text-beige;
+  }
+  .button.button-filled:hover > svg {
+    @apply fill-beige;
+  }
 }
 
 @layer components {
