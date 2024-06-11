@@ -115,6 +115,10 @@ var queryForm=function(e){var t=!(!e||!e.reset)&&e.reset,n=window.location.toStr
         VK.Goal('lead')
      }
 
+     if (window.fbq) {
+        fbq('track', 'Lead');
+     }
+
      let formData = new FormData(form)
      formData.append('URL', window.location)
 
