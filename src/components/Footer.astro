@@ -7,6 +7,8 @@ const navLinks = [
   { href: '/#how', label: 'Как это работает?' },
   { href: '/#features', label: 'Возможности' },
   { href: '/#cases', label: 'Примеры' },
+  { href: '/pricing', label: 'Цены' },
+  { href: '/about', label: 'Контакты' },
 ];
 
 ---
@@ -21,9 +23,9 @@ const navLinks = [
           <div class="w-full md:w-auto" id="navbar-default">
             <ul class="font-medium flex flex-col py-4 md:py-12 md:mt-8 rounded-lg md:grid md:grid-cols-3 md:justify-items-center mt-4">
                 {navLinks.map(link => (
-                <li>
-                    <a href={link.href} class="block py-2 px-3 md:bg-transparent md:p-0 text-darkbeige hover:text-ochre ">{link.label}</a>
-                </li>
+                  <li class="my-3">
+                      <a href={link.href} class="block py-2 px-3 md:bg-transparent md:p-0 text-darkbeige hover:text-ochre ">{link.label}</a>
+                  </li>
                 ))}
                 <li class="md:col-start-2 md:w-full md:flex md:justify-center mt-8 md:mt-20 px-3">
                   <a class="px-4 py-2 md:px-6 md:py-4 border rounded-lg border-ochre hover:text-darkochre hover:border-darkochre text-ochre inline-flex" href="#contact">
@@ -40,7 +42,7 @@ const navLinks = [
         </div>
         <div class="flex justify-center mt-4 md:m-0 text-ochre">
             <div class="pb-4">
-                @ <span id="currentYear"></span> AOM | Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="underline">Astro</a></div>
+                @ <span id="currentYear"></span> | ООО "AOM" ОГРН 1201600051355 | <a href="/privacy-policy" class="underline">Политика конфиденциальности</a></div>
             </div>
         </div>
       </Container>
