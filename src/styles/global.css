@@ -67,3 +67,17 @@
     @apply py-10;
   }
 }
+
+@layer components {
+  .legal-content{
+    h2 {
+      @apply mt-5 text-2xl;
+    }
+    p {
+      @apply mt-1;
+    }
+    ol, ul {
+      padding-inline-start: 1rem;
+    }
+  }
+}
